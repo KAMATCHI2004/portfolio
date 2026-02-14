@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kamatchi V | Portfolio</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: #f4f6f8;
+        color: #333;
+      }
+      /* ===== Banner ===== */
+      .hero {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        line-height: 0; /* removes small bottom gap */
+      }
+
+      .hero img {
+        width: 100%;
+        height: 50;
+        display: block; /* removes inline spacing */
+      }
+
+      /* ===== Navbar ===== */
+      nav {
+        background: #0f172a;
+        padding: 12px;
+        text-align: center;
+        position: sticky;
+        margin: 0;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      nav a:hover {
+        color: #60a5fa;
+      }
+
+      /* ===== Sections ===== */
+      section {
+        display: none;
+        padding: 60px 10%;
+        animation: fadeUp 0.6s ease;
+      }
+
+      section.active {
+        display: block;
+      }
+
+      h2 {
+        color: #1e293b;
+        border-bottom: 3px solid #e2e8f0;
+        padding-bottom: 6px;
+      }
+
+      .card {
+        background: white;
+        padding: 25px;
+        margin-top: 25px;
+        border-radius: 14px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .badges {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        margin-top: 25px;
+      }
+
+      .badge {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 14px;
+        text-align: center;
+        cursor: pointer;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .badge:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .badge img {
+        width: 100%;
+        max-height: 140px;
+        object-fit: contain;
+        margin-bottom: 12px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 8px;
+        border: 1px solid #cbd5f5;
+      }
+
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      /* ===== Modal ===== */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+      }
+
+      .modal img {
+        display: block;
+        margin: auto;
+        max-width: 80%;
+        max-height: 80%;
+        margin-top: 5%;
+        border-radius: 10px;
+      }
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      /* ===== Social Links ===== */
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        margin: 30px 0 10px;
+      }
+
+      .social-links a {
+        width: 46px;
+        height: 46px;
+        background: #0f172a;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        text-decoration: none;
+        transition:
+          transform 0.3s ease,
+          background 0.3s ease;
+      }
+
+      .social-links a:hover {
+        transform: translateY(-4px);
+        background: #2563eb;
+      }
+
+      footer {
+        background: #1e293b;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="hero">
+      <img src="certificates/banner.png" alt="Kamatchi Portfolio Banner" />
+    </header>
+
+    <nav>
+      <a onclick="showSection('about')">Home</a>
+      <a onclick="showSection('skills')">Skills</a>
+      <a onclick="showSection('projects')">Projects</a>
+      <a onclick="showSection('publications')">Publications</a>
+      <a onclick="showSection('certifications')">Certifications</a>
+      <a onclick="showSection('Internship')">Internship</a>
+      <a onclick="showSection('contact')">Enquiry</a>
+    </nav>
+
+    <!-- ALL YOUR SECTIONS REMAIN EXACTLY SAME -->
+    <!-- I AM NOT REMOVING ANY CONTENT -->
+
+    <!-- LANDING / ABOUT -->
+    <section id="about" class="active">
+      <div class="card" style="text-align: center">
+        <h2>Hello, I’m Kamatchi 👋</h2>
+
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 20px">
+          Aspiring <b>Data Analyst</b> passionate about <b>Machine Learning</b>,
+          <b>Deep Learning</b>, and <b>Web Development</b>. I enjoy transforming
+          complex data into meaningful insights and building intelligent
+          real-world solutions.
+        </p>
+
+        <!-- AREA OF INTEREST -->
+        <div style="margin-top: 30px">
+          <h3 style="color: #1e293b; margin-bottom: 15px">
+            🎯 Areas of Interest
+          </h3>
+
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 12px;
+            "
+          >
+            <span class="btn" style="background: #e2e8f0; color: #1e293b"
+              >Data Analytics</span
+            >
+            <span class="btn" style="background: #e2e8f0; color: #1e293b"
+              >Machine Learning</span
+            >
+            <span class="btn" style="background: #e2e8f0; color: #1e293b"
+              >Deep Learning</span
+            >
+            <span class="btn" style="background: #e2e8f0; color: #1e293b"
+              >Artificial Intelligence</span
+            >
+            <span class="btn" style="background: #e2e8f0; color: #1e293b"
+              >Web Development</span
+            >
+            <span class="btn" style="background: #e2e8f0; color: #1e293b"
+              >Predictive Analytics</span
+            >
+          </div>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div style="margin-top: 35px">
+          <a class="btn" onclick="showSection('projects')">View Projects</a>
+          <a
+            class="btn"
+            style="background: #2563eb"
+            onclick="showSection('contact')"
+          >
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card">
+        <b>Programming:</b> Python, Java, SQL <br /><br />
+        <b>Tools:</b> Power BI, HTML, CSS <br /><br />
+        <b>Soft Skills:</b> Communication, Teamwork, Problem Solving
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <!-- Project 1 -->
+      <div class="card project">
+        <h3>Brain Tumour MRI Detection</h3>
+        <p>
+          <b>Aim:</b> Automated brain tumour classification from MRI scans using
+          deep learning for early diagnosis and improved patient outcomes.
+        </p>
+        <p><b>Database:</b> Brain MRI Image Dataset (Augmented)</p>
+        <p><b>Technology:</b> 23-layer CNN, Deep Learning, Image Processing</p>
+        <p><b>Language:</b> Python</p>
+        <a
+          class="btn"
+          href="https://github.com/KAMATCHI2004/BRAINTUMOR-MRI-USING-CNN"
+          target="_blank"
+        >
+          View on GitHub
+        </a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card project">
+        <h3>Netflix Customer Behaviour Analysis</h3>
+        <p>
+          <b>Aim:</b> Analyse and visualise customer behaviour to understand
+          regional preferences and genre trends.
+        </p>
+        <p><b>Database:</b> Netflix Movies and TV Shows Dataset (CSV)</p>
+        <p>
+          <b>Technology:</b> Interactive Visualisation, Dashboard Development
+        </p>
+        <p><b>Tool Used:</b> Power BI</p>
+        <a
+          class="btn"
+          href="https://github.com/KAMATCHI2004/netflix/tree/main"
+          target="_blank"
+        >
+          View on GitHub
+        </a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card project">
+        <h3>Early Diagnosis of Diabetes Using ML Algorithms</h3>
+        <p>
+          <b>Aim:</b> Predict early diabetes risk using machine learning models
+          on patient health data.
+        </p>
+        <p><b>Database:</b> Pima Indians Diabetes Dataset</p>
+        <p>
+          <b>Technology:</b> Logistic Regression, SVM, KNN, Random Forest, LIME
+        </p>
+        <p><b>Language:</b> Python</p>
+        <a
+          class="btn"
+          href="https://github.com/KAMATCHI2004/netflix/tree/main"
+          target="_blank"
+        >
+          View on GitHub
+        </a>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="card project">
+        <h3>Crop Prediction Using ML Algorithms</h3>
+        <p>
+          <b>Aim:</b> Predict the most suitable crop based on soil and
+          environmental parameters using machine learning.
+        </p>
+        <p><b>Algorithm:</b> Random Forest</p>
+        <p>
+          <b>Frontend:</b> Streamlit framework for interactive crop
+          classification
+        </p>
+        <p><b>Language:</b> Python</p>
+        <a
+          class="btn"
+          href="https://github.com/KAMATCHI2004/cropprediction-in-ml"
+          target="_blank"
+        >
+          View on GitHub
+        </a>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Conference Publications</h2>
+
+      <!-- ===== Paper 1 ===== -->
+      <div class="card">
+        <h3>📄 Paper 1</h3>
+
+        <p>
+          <b>Title:</b> Harnessing Predictive Analytics for Early Diagnosis of
+          Diabetes Using Machine Learning Algorithms
+        </p>
+
+        <p>
+          <b>Authors:</b><br />
+          1. Erana Veerappa Dinesh S¹ – Associate Professor, CSBS (RIT)<br />
+          2. Gomathy Nayagam M² – Associate Professor, CSBS (RIT)<br />
+          3. Shabana Fathima M³ – Assistant Professor, CSBS (RIT)<br />
+          4. <b>Kamatchi V⁴</b> – Student, CSBS (RIT)
+        </p>
+
+        <p>
+          <b>Conference Name:</b> Emerging Trends in Mathematics, Physics and
+          Chemistry for Sustainable Development (ETMPCS)
+        </p>
+        <p>
+          <b>Organized By:</b> JP College of Arts and Science, Ayikudi, Tenkasi
+          District
+        </p>
+        <p><b>Year:</b> 2025</p>
+
+        <!-- Certificate -->
+        <div
+          class="badge"
+          onclick="openModal(this)"
+          style="margin-top: 20px; max-width: 260px"
+        >
+          <img src="certificates/jp.jpg" alt="ETMPCS Certificate" />
+          <b>ETMPCS 2025 – Conference Certificate</b>
+        </div>
+      </div>
+
+      <!-- ===== Paper 2 ===== -->
+      <div class="card">
+        <h3>📄 Paper 2</h3>
+
+        <p>
+          <b>Title:</b> AI-Enabled Web Platform for Predictive Water Quality
+          Monitoring for Sewage Treatment Plant
+        </p>
+
+        <p>
+          <b>Authors:</b><br />
+          1. Gomathy Nayagam M¹ – Associate Professor, CSBS (RIT)<br />
+          2. Senthil Kumar O² – Associate Professor, Chemistry (RIT)<br />
+          3. <b>Kamatchi V³</b> – Student, CSBS (RIT)
+        </p>
+
+        <p>
+          <b>Conference Name:</b> Sustainable Computing And Optimised Practice
+          For Excellence (SCOPE 2025), IEEE
+        </p>
+        <p><b>Organized By:</b> Thiyagaraja College of Engineering, Madurai</p>
+        <p><b>Year:</b> 2025</p>
+
+        <!-- Certificate -->
+        <div
+          class="badge"
+          onclick="openModal(this)"
+          style="margin-top: 20px; max-width: 260px"
+        >
+          <img src="certificates/tce.jpg" alt="IEEE SCOPE Certificate" />
+          <b>IEEE SCOPE 2025 – Conference Certificate</b>
+        </div>
+      </div>
+    </section>
+
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <title>Certifications</title>
+
+        <style>
+          /* ===== Certifications Section ===== */
+          #certifications {
+            padding: 60px 20px;
+          }
+
+          #certifications h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+          }
+
+          /* Grid Layout */
+          .badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+          }
+
+          /* Badge Card */
+          .badge {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 14px;
+            text-align: center;
+            cursor: pointer;
+            transition:
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
+          }
+
+          .badge:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+          }
+
+          .badge img {
+            width: 100%;
+            max-height: 140px;
+            object-fit: contain;
+            margin-bottom: 12px;
+          }
+
+          /* ===== Modal Popup ===== */
+          .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+          }
+
+          .modal img {
+            display: block;
+            margin: auto;
+            max-width: 80%;
+            max-height: 80%;
+            margin-top: 5%;
+            border-radius: 10px;
+          }
+
+          .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+          }
+        </style>
+      </head>
+
+      <body>
+        <section id="certifications">
+          <h2>Certifications & Badges</h2>
+
+          <div class="badges">
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/csi.jpg" />
+              Winner in Pychamp
+            </div>
+
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/aws.png" />
+              AWS Cloud Quest: Cloud Practitioner
+            </div>
+
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/awsgames.png" />
+              AWS for Games: Cloud Game Development
+            </div>
+
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/google ai.png" />
+              Google AI Essentials
+            </div>
+
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/oracle.jpg" />
+              Oracle OCI AI Foundations Associate
+            </div>
+
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/tamil.jpg" />
+              Vaagai tamil sangam , literature Writting (Sentamil selvan Award)
+            </div>
+
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/ui auto.jpg" />
+              UiPath Automation Explorer
+            </div>
+
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/googlecy.png" />
+              Google Cloud Cybersecurity Certificate
+            </div>
+
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/iucee.jpg" />
+              Design Thinking & Community-Based Design (IUCEE)
+            </div>
+
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/ui naan.jpg" />
+              Naan Mudhalvan – RPA Foundation
+            </div>
+
+            <div class="badge" onclick="openModal(this)">
+              <img src="certificates/wipro.jpg" />
+              Wipro TalentNext Course Completion
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Modal ===== -->
+        <div id="certModal" class="modal">
+          <span class="close" onclick="closeModal()">×</span>
+          <img id="modalImg" />
+        </div>
+
+        <script>
+          function openModal(el) {
+            document.getElementById("certModal").style.display = "block";
+            document.getElementById("modalImg").src =
+              el.querySelector("img").src;
+          }
+
+          function closeModal() {
+            document.getElementById("certModal").style.display = "none";
+          }
+
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") closeModal();
+          });
+        </script>
+      </body>
+    </html>
+    <section id="Internship">
+      <h2>Internship Details</h2>
+      <div class="badge" onclick="openModal(this)">
+        <img src="certificates/intern elysium.jpg" />
+        completion of one month internship at Elysium Technologies Private
+        Limited , Madurai. Domain : Data Science Year: August 2024
+      </div>
+      <div class="badge" onclick="openModal(this)">
+        <img src="certificates/ailaysa.jpg" />
+        completion of two week of Internship at at Ailaysa Technologies Private
+        Limited , Tharamani ,Chennai . Domain : Mobile App Development Year :
+        2025
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <script>
+      (function () {
+        emailjs.init("YOUR_PUBLIC_KEY");
+      })();
+
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          document.getElementById("form-status").innerText = "Sending...";
+
+          emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this).then(
+            function () {
+              document.getElementById("form-status").innerText =
+                "✅ Message sent successfully!";
+              document.getElementById("contact-form").reset();
+            },
+            function (error) {
+              document.getElementById("form-status").innerText =
+                "❌ Failed to send message. Try again.";
+            }
+          );
+        });
+    </script>
+    <section id="contact">
+      <h2>Enquiry Form</h2>
+
+      <div class="card">
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send Enquiry</button>
+        </form>
+
+        <p id="form-status" style="margin-top: 10px"></p>
+      </div>
+    </section>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <div class="social-links">
+      <!-- LinkedIn -->
+      <a
+        href="https://www.linkedin.com/in/kamatchidataanalyst2004/"
+        target="_blank"
+        title="LinkedIn"
+      >
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/KAMATCHI2004" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:kamatchiv2004@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+
+      <!-- Credly -->
+      <a
+        href="https://www.credly.com/users/kamatchi-v.2004batch"
+        target="_blank"
+        title="Credly"
+      >
+        <i class="fas fa-award"></i>
+      </a>
+
+      <!-- UiPath -->
+      <a
+        href="https://credentials.uipath.com/profile/kamatchiv830762/wallet"
+        target="_blank"
+        title="UiPath Credentials"
+      >
+        <i class="fas fa-robot"></i>
+      </a>
+    </div>
+
+    <footer>© 2026 Kamatchi V | Portfolio Website</footer>
+
+    <script>
+      function showSection(id) {
+        document
+          .querySelectorAll("section")
+          .forEach((sec) => sec.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
